@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94338AC417BE93850083BDDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94338AC317BE93850083BDDA /* Foundation.framework */; };
+		94338AC617BE93850083BDDA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94338AC517BE93850083BDDA /* CoreGraphics.framework */; };
+		94338AC817BE93850083BDDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94338AC717BE93850083BDDA /* UIKit.framework */; };
+		94338ACE17BE93850083BDDA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94338ACC17BE93850083BDDA /* InfoPlist.strings */; };
+		94338AD017BE93850083BDDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338ACF17BE93850083BDDA /* main.m */; };
+		94338AD417BE93850083BDDA /* MDSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338AD317BE93850083BDDA /* MDSAppDelegate.m */; };
+		94338AD717BE93850083BDDA /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94338AD517BE93850083BDDA /* Main_iPhone.storyboard */; };
+		94338ADA17BE93850083BDDA /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94338AD817BE93850083BDDA /* Main_iPad.storyboard */; };
+		94338ADD17BE93850083BDDA /* MDSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338ADC17BE93850083BDDA /* MDSViewController.m */; };
+		94338ADF17BE93850083BDDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94338ADE17BE93850083BDDA /* Images.xcassets */; };
+		94338AE617BE93850083BDDA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94338AE517BE93850083BDDA /* XCTest.framework */; };
+		94338AE717BE93850083BDDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94338AC317BE93850083BDDA /* Foundation.framework */; };
+		94338AE817BE93850083BDDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94338AC717BE93850083BDDA /* UIKit.framework */; };
+		94338AF017BE93850083BDDA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94338AEE17BE93850083BDDA /* InfoPlist.strings */; };
+		94338AF217BE93850083BDDA /* Tile_GameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338AF117BE93850083BDDA /* Tile_GameTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94338AE917BE93850083BDDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94338AB817BE93850083BDDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94338ABF17BE93850083BDDA;
+			remoteInfo = "Tile Game";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		94338AC017BE93850083BDDA /* Tile Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tile Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94338AC317BE93850083BDDA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		94338AC517BE93850083BDDA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		94338AC717BE93850083BDDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		94338ACB17BE93850083BDDA /* Tile Game-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tile Game-Info.plist"; sourceTree = "<group>"; };
+		94338ACD17BE93850083BDDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94338ACF17BE93850083BDDA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		94338AD117BE93850083BDDA /* Tile Game-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tile Game-Prefix.pch"; sourceTree = "<group>"; };
+		94338AD217BE93850083BDDA /* MDSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSAppDelegate.h; sourceTree = "<group>"; };
+		94338AD317BE93850083BDDA /* MDSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSAppDelegate.m; sourceTree = "<group>"; };
+		94338AD617BE93850083BDDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		94338AD917BE93850083BDDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		94338ADB17BE93850083BDDA /* MDSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSViewController.h; sourceTree = "<group>"; };
+		94338ADC17BE93850083BDDA /* MDSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSViewController.m; sourceTree = "<group>"; };
+		94338ADE17BE93850083BDDA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		94338AE417BE93850083BDDA /* Tile GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tile GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94338AE517BE93850083BDDA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		94338AED17BE93850083BDDA /* Tile GameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tile GameTests-Info.plist"; sourceTree = "<group>"; };
+		94338AEF17BE93850083BDDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94338AF117BE93850083BDDA /* Tile_GameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tile_GameTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94338ABD17BE93850083BDDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94338AC617BE93850083BDDA /* CoreGraphics.framework in Frameworks */,
+				94338AC817BE93850083BDDA /* UIKit.framework in Frameworks */,
+				94338AC417BE93850083BDDA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94338AE117BE93850083BDDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94338AE617BE93850083BDDA /* XCTest.framework in Frameworks */,
+				94338AE817BE93850083BDDA /* UIKit.framework in Frameworks */,
+				94338AE717BE93850083BDDA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94338AB717BE93850083BDDA = {
+			isa = PBXGroup;
+			children = (
+				94338AC917BE93850083BDDA /* Tile Game */,
+				94338AEB17BE93850083BDDA /* Tile GameTests */,
+				94338AC217BE93850083BDDA /* Frameworks */,
+				94338AC117BE93850083BDDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94338AC117BE93850083BDDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94338AC017BE93850083BDDA /* Tile Game.app */,
+				94338AE417BE93850083BDDA /* Tile GameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94338AC217BE93850083BDDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94338AC317BE93850083BDDA /* Foundation.framework */,
+				94338AC517BE93850083BDDA /* CoreGraphics.framework */,
+				94338AC717BE93850083BDDA /* UIKit.framework */,
+				94338AE517BE93850083BDDA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94338AC917BE93850083BDDA /* Tile Game */ = {
+			isa = PBXGroup;
+			children = (
+				94338AD217BE93850083BDDA /* MDSAppDelegate.h */,
+				94338AD317BE93850083BDDA /* MDSAppDelegate.m */,
+				94338AD517BE93850083BDDA /* Main_iPhone.storyboard */,
+				94338AD817BE93850083BDDA /* Main_iPad.storyboard */,
+				94338ADB17BE93850083BDDA /* MDSViewController.h */,
+				94338ADC17BE93850083BDDA /* MDSViewController.m */,
+				94338ADE17BE93850083BDDA /* Images.xcassets */,
+				94338ACA17BE93850083BDDA /* Supporting Files */,
+			);
+			path = "Tile Game";
+			sourceTree = "<group>";
+		};
+		94338ACA17BE93850083BDDA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94338ACB17BE93850083BDDA /* Tile Game-Info.plist */,
+				94338ACC17BE93850083BDDA /* InfoPlist.strings */,
+				94338ACF17BE93850083BDDA /* main.m */,
+				94338AD117BE93850083BDDA /* Tile Game-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94338AEB17BE93850083BDDA /* Tile GameTests */ = {
+			isa = PBXGroup;
+			children = (
+				94338AF117BE93850083BDDA /* Tile_GameTests.m */,
+				94338AEC17BE93850083BDDA /* Supporting Files */,
+			);
+			path = "Tile GameTests";
+			sourceTree = "<group>";
+		};
+		94338AEC17BE93850083BDDA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94338AED17BE93850083BDDA /* Tile GameTests-Info.plist */,
+				94338AEE17BE93850083BDDA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94338ABF17BE93850083BDDA /* Tile Game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94338AF517BE93850083BDDA /* Build configuration list for PBXNativeTarget "Tile Game" */;
+			buildPhases = (
+				94338ABC17BE93850083BDDA /* Sources */,
+				94338ABD17BE93850083BDDA /* Frameworks */,
+				94338ABE17BE93850083BDDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tile Game";
+			productName = "Tile Game";
+			productReference = 94338AC017BE93850083BDDA /* Tile Game.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94338AE317BE93850083BDDA /* Tile GameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94338AF817BE93850083BDDA /* Build configuration list for PBXNativeTarget "Tile GameTests" */;
+			buildPhases = (
+				94338AE017BE93850083BDDA /* Sources */,
+				94338AE117BE93850083BDDA /* Frameworks */,
+				94338AE217BE93850083BDDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94338AEA17BE93850083BDDA /* PBXTargetDependency */,
+			);
+			name = "Tile GameTests";
+			productName = "Tile GameTests";
+			productReference = 94338AE417BE93850083BDDA /* Tile GameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94338AB817BE93850083BDDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MDS;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = MDS;
+				TargetAttributes = {
+					94338AE317BE93850083BDDA = {
+						TestTargetID = 94338ABF17BE93850083BDDA;
+					};
+				};
+			};
+			buildConfigurationList = 94338ABB17BE93850083BDDA /* Build configuration list for PBXProject "Tile Game" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 94338AB717BE93850083BDDA;
+			productRefGroup = 94338AC117BE93850083BDDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94338ABF17BE93850083BDDA /* Tile Game */,
+				94338AE317BE93850083BDDA /* Tile GameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94338ABE17BE93850083BDDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94338ADA17BE93850083BDDA /* Main_iPad.storyboard in Resources */,
+				94338ADF17BE93850083BDDA /* Images.xcassets in Resources */,
+				94338AD717BE93850083BDDA /* Main_iPhone.storyboard in Resources */,
+				94338ACE17BE93850083BDDA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94338AE217BE93850083BDDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94338AF017BE93850083BDDA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94338ABC17BE93850083BDDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94338AD017BE93850083BDDA /* main.m in Sources */,
+				94338AD417BE93850083BDDA /* MDSAppDelegate.m in Sources */,
+				94338ADD17BE93850083BDDA /* MDSViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94338AE017BE93850083BDDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94338AF217BE93850083BDDA /* Tile_GameTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94338AEA17BE93850083BDDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94338ABF17BE93850083BDDA /* Tile Game */;
+			targetProxy = 94338AE917BE93850083BDDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		94338ACC17BE93850083BDDA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94338ACD17BE93850083BDDA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		94338AD517BE93850083BDDA /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94338AD617BE93850083BDDA /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		94338AD817BE93850083BDDA /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94338AD917BE93850083BDDA /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		94338AEE17BE93850083BDDA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94338AEF17BE93850083BDDA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94338AF317BE93850083BDDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94338AF417BE93850083BDDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94338AF617BE93850083BDDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tile Game/Tile Game-Prefix.pch";
+				INFOPLIST_FILE = "Tile Game/Tile Game-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		94338AF717BE93850083BDDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tile Game/Tile Game-Prefix.pch";
+				INFOPLIST_FILE = "Tile Game/Tile Game-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		94338AF917BE93850083BDDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Tile Game.app/Tile Game";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tile Game/Tile Game-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tile GameTests/Tile GameTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		94338AFA17BE93850083BDDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Tile Game.app/Tile Game";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tile Game/Tile Game-Prefix.pch";
+				INFOPLIST_FILE = "Tile GameTests/Tile GameTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94338ABB17BE93850083BDDA /* Build configuration list for PBXProject "Tile Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94338AF317BE93850083BDDA /* Debug */,
+				94338AF417BE93850083BDDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94338AF517BE93850083BDDA /* Build configuration list for PBXNativeTarget "Tile Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94338AF617BE93850083BDDA /* Debug */,
+				94338AF717BE93850083BDDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		94338AF817BE93850083BDDA /* Build configuration list for PBXNativeTarget "Tile GameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94338AF917BE93850083BDDA /* Debug */,
+				94338AFA17BE93850083BDDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94338AB817BE93850083BDDA /* Project object */;
+}
