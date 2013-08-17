@@ -7,12 +7,17 @@
 //
 
 #import "MDSAppDelegate.h"
+#import "MDSTileSource.h"
 
 @implementation MDSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+  NSURL * imgURL = [[NSBundle mainBundle] URLForResource:@"globe" withExtension:@"jpg"];
+  MDSTileSource * tileSource = [[MDSTileSource alloc] initWithImageURL:imgURL
+                                                              gridSize:(CGSize){4,4}];
+  
     return YES;
 }
 							

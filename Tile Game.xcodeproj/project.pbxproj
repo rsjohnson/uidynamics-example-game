@@ -22,6 +22,11 @@
 		94338AE817BE93850083BDDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94338AC717BE93850083BDDA /* UIKit.framework */; };
 		94338AF017BE93850083BDDA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94338AEE17BE93850083BDDA /* InfoPlist.strings */; };
 		94338AF217BE93850083BDDA /* Tile_GameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338AF117BE93850083BDDA /* Tile_GameTests.m */; };
+		94338B0317BE95490083BDDA /* MDSTileSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338B0217BE95490083BDDA /* MDSTileSource.m */; };
+		94338B0517BED3AF0083BDDA /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94338B0417BED3AF0083BDDA /* CoreImage.framework */; };
+		94338B0717BED4510083BDDA /* globe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94338B0617BED4510083BDDA /* globe.jpg */; };
+		94338B0B17BFD3B30083BDDA /* NSIndexPath+MDSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338B0A17BFD3B30083BDDA /* NSIndexPath+MDSExtensions.m */; };
+		94338B0E17BFD9460083BDDA /* MDSGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338B0D17BFD9460083BDDA /* MDSGameController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,14 @@
 		94338AED17BE93850083BDDA /* Tile GameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tile GameTests-Info.plist"; sourceTree = "<group>"; };
 		94338AEF17BE93850083BDDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94338AF117BE93850083BDDA /* Tile_GameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tile_GameTests.m; sourceTree = "<group>"; };
+		94338B0117BE95490083BDDA /* MDSTileSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDSTileSource.h; path = Models/MDSTileSource.h; sourceTree = "<group>"; };
+		94338B0217BE95490083BDDA /* MDSTileSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDSTileSource.m; path = Models/MDSTileSource.m; sourceTree = "<group>"; };
+		94338B0417BED3AF0083BDDA /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		94338B0617BED4510083BDDA /* globe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = globe.jpg; sourceTree = "<group>"; };
+		94338B0917BFD3B30083BDDA /* NSIndexPath+MDSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+MDSExtensions.h"; sourceTree = "<group>"; };
+		94338B0A17BFD3B30083BDDA /* NSIndexPath+MDSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+MDSExtensions.m"; sourceTree = "<group>"; };
+		94338B0C17BFD9460083BDDA /* MDSGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDSGameController.h; path = Controllers/MDSGameController.h; sourceTree = "<group>"; };
+		94338B0D17BFD9460083BDDA /* MDSGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDSGameController.m; path = Controllers/MDSGameController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94338B0517BED3AF0083BDDA /* CoreImage.framework in Frameworks */,
 				94338AC617BE93850083BDDA /* CoreGraphics.framework in Frameworks */,
 				94338AC817BE93850083BDDA /* UIKit.framework in Frameworks */,
 				94338AC417BE93850083BDDA /* Foundation.framework in Frameworks */,
@@ -103,6 +117,7 @@
 		94338AC217BE93850083BDDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94338B0417BED3AF0083BDDA /* CoreImage.framework */,
 				94338AC317BE93850083BDDA /* Foundation.framework */,
 				94338AC517BE93850083BDDA /* CoreGraphics.framework */,
 				94338AC717BE93850083BDDA /* UIKit.framework */,
@@ -114,6 +129,10 @@
 		94338AC917BE93850083BDDA /* Tile Game */ = {
 			isa = PBXGroup;
 			children = (
+				94338B0817BFD39D0083BDDA /* Categories */,
+				94338AFC17BE93BD0083BDDA /* Models */,
+				94338AFB17BE93B10083BDDA /* Controllers */,
+				94338AFD17BE946B0083BDDA /* Views / View Controllers */,
 				94338AD217BE93850083BDDA /* MDSAppDelegate.h */,
 				94338AD317BE93850083BDDA /* MDSAppDelegate.m */,
 				94338AD517BE93850083BDDA /* Main_iPhone.storyboard */,
@@ -129,6 +148,7 @@
 		94338ACA17BE93850083BDDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				94338B0617BED4510083BDDA /* globe.jpg */,
 				94338ACB17BE93850083BDDA /* Tile Game-Info.plist */,
 				94338ACC17BE93850083BDDA /* InfoPlist.strings */,
 				94338ACF17BE93850083BDDA /* main.m */,
@@ -153,6 +173,40 @@
 				94338AEE17BE93850083BDDA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94338AFB17BE93B10083BDDA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				94338B0C17BFD9460083BDDA /* MDSGameController.h */,
+				94338B0D17BFD9460083BDDA /* MDSGameController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		94338AFC17BE93BD0083BDDA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				94338B0117BE95490083BDDA /* MDSTileSource.h */,
+				94338B0217BE95490083BDDA /* MDSTileSource.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		94338AFD17BE946B0083BDDA /* Views / View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Views / View Controllers";
+			sourceTree = "<group>";
+		};
+		94338B0817BFD39D0083BDDA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				94338B0917BFD3B30083BDDA /* NSIndexPath+MDSExtensions.h */,
+				94338B0A17BFD3B30083BDDA /* NSIndexPath+MDSExtensions.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +257,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = MDS;
 				TargetAttributes = {
+					94338ABF17BE93850083BDDA = {
+						DevelopmentTeam = FM5D98632D;
+					};
 					94338AE317BE93850083BDDA = {
 						TestTargetID = 94338ABF17BE93850083BDDA;
 					};
@@ -232,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94338B0717BED4510083BDDA /* globe.jpg in Resources */,
 				94338ADA17BE93850083BDDA /* Main_iPad.storyboard in Resources */,
 				94338ADF17BE93850083BDDA /* Images.xcassets in Resources */,
 				94338AD717BE93850083BDDA /* Main_iPhone.storyboard in Resources */,
@@ -255,8 +313,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				94338AD017BE93850083BDDA /* main.m in Sources */,
+				94338B0317BE95490083BDDA /* MDSTileSource.m in Sources */,
+				94338B0E17BFD9460083BDDA /* MDSGameController.m in Sources */,
 				94338AD417BE93850083BDDA /* MDSAppDelegate.m in Sources */,
 				94338ADD17BE93850083BDDA /* MDSViewController.m in Sources */,
+				94338B0B17BFD3B30083BDDA /* NSIndexPath+MDSExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tile Game/Tile Game-Prefix.pch";
 				INFOPLIST_FILE = "Tile Game/Tile Game-Info.plist";
@@ -402,6 +464,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tile Game/Tile Game-Prefix.pch";
 				INFOPLIST_FILE = "Tile Game/Tile Game-Info.plist";
