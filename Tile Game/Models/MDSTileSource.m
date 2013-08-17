@@ -7,13 +7,16 @@
 //
 
 #import "MDSTileSource.h"
+
 #import <CoreImage/CoreImage.h>
+#import "MDSGameController.h"
+#import "MDSTile.h"
 
 @implementation MDSTileSource
 {
-  CGSize _gridSize;
   UIImage * _fullImage;
   NSMutableDictionary * _slicedImages;
+  BOOL _isInUse;
 }
 
 - (MDSTileSource*) initWithImageURL:(NSURL *)url gridSize:(CGSize)gridSize {
@@ -45,8 +48,7 @@
   
   CIContext * ctx = [CIContext contextWithOptions:nil];
   CIImage * fullImage = [CIImage imageWithCGImage:_fullImage.CGImage];
-  CGRect imageFrame = (CGRect){{0,0}, _fullImage.size};
-  NSLog(@"%@", NSStringFromCGRect(imageFrame));
+
   CGSize tileSize = (CGSize){_fullImage.size.width / _gridSize.width, _fullImage.size.height / _gridSize.height};
   
   for (int row = 0; row < _gridSize.width; row++) {
@@ -54,6 +56,7 @@
         dispatch_async(tileQueue, ^{
           NSInteger column = _gridSize.height - heightCounter - 1; // normalize this to 0 based
           
+          // create the tile frame and convert to CI coordinate space
           CGRect tileFrame = (CGRect){{row * tileSize.width, heightCounter * tileSize.height}, tileSize};
           tileFrame = CGRectApplyAffineTransform(tileFrame, CGAffineTransformMakeTranslation(1, -1));
           
@@ -79,6 +82,59 @@
   NSLog(@"Slicing Complete. Elapsed Time: %f", -[sliceTimer timeIntervalSinceNow]);
 }
 
+- (NSArray*) randomizedTiles {
+  NSMutableArray * tiles = [NSMutableArray array];
+  NSMutableArray * allIndexes = [[_slicedImages allKeys] mutableCopy];
+  
+  NSInteger row = 0;
+  NSInteger column = 0;
+  NSInteger randomIndex = arc4random_uniform(allIndexes.count);
+  while (allIndexes.count > 0) {
+    NSIndexPath * indexPath = allIndexes[randomIndex];
+    MDSTile * tile = [[MDSTile alloc] init];
+    tile.image =_slicedImages[indexPath];
+    tile.properIndex = indexPath;
+    tile.initialIndex = [NSIndexPath indexPathForRow:row inColumn:column];
+    [tiles addObject:tile];
+    
+    
+    [allIndexes removeObjectAtIndex:randomIndex];
+    column++;
+    if (column >= self.gridSize.width) {
+      column = 0;
+      row++;
+    }
+    randomIndex = arc4random_uniform(allIndexes.count);
+  }
+  
+  // remove one tile to create some blank space
+  [tiles removeObjectAtIndex:arc4random_uniform(tiles.count)];
+  
+  return tiles;
+}
 
+#pragma mark - NSDisposableContent Protocol
+
+- (BOOL) beginContentAccess {
+  _isInUse = YES;
+  return YES;
+}
+
+- (void) endContentAccess {
+  _isInUse = NO;
+}
+
+- (void) discardContentIfPossible {
+  if (_isInUse) {
+    return;
+  }
+  
+  _slicedImages = [NSMutableDictionary dictionary];
+  _fullImage = nil;
+}
+
+- (BOOL) isContentDiscarded {
+  return _slicedImages.count == 0;
+}
 
 @end

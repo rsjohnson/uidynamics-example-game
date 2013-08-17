@@ -33,6 +33,7 @@ typedef void (^MDSGameReadyCallback)(MDSGameController* gameController);
                       gridSize:(CGSize)size
                  readyCallback:(MDSGameReadyCallback)callback;
 
-@property (nonatomic, readonly, strong) MDSTileSource * tileSource;
+@property (nonatomic, readonly, strong) NSArray * gameTiles;
+@property (nonatomic, readonly, assign) CGSize gridSize;
 
 @end
