@@ -9,33 +9,43 @@
 #import "MDSGameView.h"
 #import "MDSGameController.h"
 #import "MDSTile.h"
+#import "MDSTileView.h"
 
 @implementation MDSGameView
-
-- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+  UIDynamicAnimator * _dynamicAnimator;
+  NSMutableArray * _tileViews;
+  CGSize _tileViewSize;
+  CGSize _gridSize;
 }
 
 - (void) addTiles {
-  CGSize gridSize = [MDSGameController sharedController].gridSize;
+  _tileViews = [NSMutableArray array];
+  
+  _gridSize = [MDSGameController sharedController].gridSize;
   NSArray * tiles = [MDSGameController sharedController].gameTiles;
   
-  CGFloat tileViewWidth = CGRectGetWidth(self.frame) / gridSize.width;
-  CGFloat tileViewHeight = CGRectGetHeight(self.frame) / gridSize.height;
-  CGSize tileViewSize = (CGSize){ tileViewWidth, tileViewHeight };
+  CGFloat tileViewWidth = CGRectGetWidth(self.frame) / _gridSize.width;
+  CGFloat tileViewHeight = CGRectGetHeight(self.frame) / _gridSize.height;
+  _tileViewSize = (CGSize){ tileViewWidth, tileViewHeight };
     
   for (MDSTile * tile in tiles) {
     CGPoint tileOrigin = {tileViewWidth * tile.initialIndex.column, tileViewHeight * tile.initialIndex.row};
-    UIImageView * temp = [[UIImageView alloc] initWithFrame:(CGRect){tileOrigin, tileViewSize}];
-    temp.contentMode = UIViewContentModeScaleToFill;
-    temp.image = tile.image;
-    [self  addSubview:temp];                      
+    MDSTileView * tileView = [[MDSTileView alloc] initWithFrame:(CGRect){tileOrigin, _tileViewSize}];
+    tileView.tile = tile;
+    [self  addSubview:tileView];
+    [_tileViews addObject:tileView];
   }
+}
+
+- (NSArray*) tileViews {
+  return _tileViews;
+}
+
+- (CGPoint) centerForIndexPath:(NSIndexPath*)indexPath {
+  CGPoint tileOrigin = {_tileViewSize.width * indexPath.column, _tileViewSize.height * indexPath.row};
+  CGRect tileFrame = (CGRect){tileOrigin, _tileViewSize};
+  return (CGPoint){CGRectGetMidX(tileFrame), CGRectGetMidY(tileFrame)};
 }
 
 @end

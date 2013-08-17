@@ -31,6 +31,7 @@
 		94338B1417BFDFD40083BDDA /* MDSInGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338B1317BFDFD40083BDDA /* MDSInGameViewController.m */; };
 		94338B1817BFE4070083BDDA /* MDSGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338B1717BFE4070083BDDA /* MDSGameView.m */; };
 		94338B1B17BFE6500083BDDA /* MDSTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338B1A17BFE6500083BDDA /* MDSTile.m */; };
+		94338B1E17BFFCE10083BDDA /* MDSTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338B1D17BFFCE10083BDDA /* MDSTileView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		94338B1717BFE4070083BDDA /* MDSGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDSGameView.m; path = Views/MDSGameView.m; sourceTree = "<group>"; };
 		94338B1917BFE6500083BDDA /* MDSTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDSTile.h; path = Models/MDSTile.h; sourceTree = "<group>"; };
 		94338B1A17BFE6500083BDDA /* MDSTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDSTile.m; path = Models/MDSTile.m; sourceTree = "<group>"; };
+		94338B1C17BFFCE10083BDDA /* MDSTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSTileView.h; sourceTree = "<group>"; };
+		94338B1D17BFFCE10083BDDA /* MDSTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSTileView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +236,8 @@
 			children = (
 				94338B1617BFE4070083BDDA /* MDSGameView.h */,
 				94338B1717BFE4070083BDDA /* MDSGameView.m */,
+				94338B1C17BFFCE10083BDDA /* MDSTileView.h */,
+				94338B1D17BFFCE10083BDDA /* MDSTileView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				94338B0E17BFD9460083BDDA /* MDSGameController.m in Sources */,
 				94338AD417BE93850083BDDA /* MDSAppDelegate.m in Sources */,
 				94338B1817BFE4070083BDDA /* MDSGameView.m in Sources */,
+				94338B1E17BFFCE10083BDDA /* MDSTileView.m in Sources */,
 				94338ADD17BE93850083BDDA /* MDSViewController.m in Sources */,
 				94338B0B17BFD3B30083BDDA /* NSIndexPath+MDSExtensions.m in Sources */,
 			);

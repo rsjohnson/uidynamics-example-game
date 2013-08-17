@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 MDS. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 enum MDSStartScreenImageButtons {
   MDSStartScreenImageGlobe = 200

@@ -12,6 +12,10 @@
 
 @interface MDSGameView : UIView
 
+@property (nonatomic, strong, readonly) NSArray * tileViews;
+
 - (void) addTiles;
+
+- (CGPoint) centerForIndexPath:(NSIndexPath*)indexPath;
 
 @end
