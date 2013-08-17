@@ -51,17 +51,17 @@
 
   CGSize tileSize = (CGSize){_fullImage.size.width / _gridSize.width, _fullImage.size.height / _gridSize.height};
   
-  for (int row = 0; row < _gridSize.width; row++) {
+  for (int col = 0; col < _gridSize.width; col++) {
     for (int heightCounter =  0 ; heightCounter < _gridSize.height ; heightCounter++) {
         dispatch_async(tileQueue, ^{
-          NSInteger column = _gridSize.height - heightCounter - 1; // normalize this to 0 based
+          NSInteger row = _gridSize.height - heightCounter - 1; // normalize this to 0 based
           
           // create the tile frame and convert to CI coordinate space
-          CGRect tileFrame = (CGRect){{row * tileSize.width, heightCounter * tileSize.height}, tileSize};
+          CGRect tileFrame = (CGRect){{col * tileSize.width, heightCounter * tileSize.height}, tileSize};
           tileFrame = CGRectApplyAffineTransform(tileFrame, CGAffineTransformMakeTranslation(1, -1));
           
           CGImageRef slicedImage = [ctx createCGImage:fullImage fromRect:tileFrame];
-          NSIndexPath * indexPath = [NSIndexPath indexPathForRow:row inColumn:column];
+          NSIndexPath * indexPath = [NSIndexPath indexPathForRow:row inColumn:col];
           UIImage * finalSlicedImage = [UIImage imageWithCGImage:slicedImage];
           _slicedImages[indexPath] = finalSlicedImage;
 #if TARGET_IPHONE_SIMULATOR

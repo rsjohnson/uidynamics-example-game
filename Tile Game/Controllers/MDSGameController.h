@@ -35,5 +35,7 @@ typedef void (^MDSGameReadyCallback)(MDSGameController* gameController);
 
 @property (nonatomic, readonly, strong) NSArray * gameTiles;
 @property (nonatomic, readonly, assign) CGSize gridSize;
+@property (nonatomic, readonly, assign) NSIndexPath * openLocation;
+@property (nonatomic, readonly, assign) BOOL isComplete;
 
 @end

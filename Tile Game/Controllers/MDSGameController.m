@@ -8,6 +8,7 @@
 
 #import "MDSGameController.h"
 #import "MDSTileSource.h"
+#import "MDSTile.h"
 
 @implementation MDSGameController
 {
@@ -58,6 +59,34 @@
       callback(self);
     });
   });
+}
+
+- (NSIndexPath*) openLocation {
+  NSMutableArray * allPaths = [NSMutableArray array];
+  
+  for (int row = 0; row < self.gridSize.width; row++) {
+    for (int col = 0 ; col < self.gridSize.height; col++) {
+      [allPaths addObject:[NSIndexPath indexPathForRow:row inColumn:col]];
+    }
+  }
+  
+  NSMutableArray * currentPositions = [NSMutableArray array];
+  for (MDSTile * tile in [MDSGameController sharedController].gameTiles) {
+    [currentPositions addObject:tile.currentIndex];
+  }
+  
+  [allPaths removeObjectsInArray:currentPositions];
+  return [allPaths lastObject];
+}
+
+- (BOOL) isComplete {
+  for (MDSTile * tile in self.gameTiles) {
+    if ([tile.currentIndex compare:tile.properIndex] != NSOrderedSame) {
+      return NO;
+    }
+  }
+  
+  return YES;
 }
 
 @end

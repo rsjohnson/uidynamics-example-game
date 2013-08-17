@@ -55,6 +55,10 @@
   for (MDSTileView * tileView in self.gameView.tileViews) {
     UIPanGestureRecognizer * panGR = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                              action:@selector(didPan:)];
+    
+    // make sure the swipe doesn't get caught by iOS 7's new swipe to pop GR on nav controllers
+    [self.navigationController.interactivePopGestureRecognizer requireGestureRecognizerToFail:panGR];
+    
     [tileView addGestureRecognizer:panGR];
     
     UITapGestureRecognizer * tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)];
@@ -63,24 +67,17 @@
 }
 
 #pragma mark - 
-// there probably is a more elegant way to do this
-- (void) updateOpenPosition {
-  CGSize gameSize = [MDSGameController sharedController].gridSize;
-  NSMutableArray * allPaths = [NSMutableArray array];
 
-  for (int row = 0; row < gameSize.width; row++) {
-    for (int col = 0 ; col < gameSize.height; col++) {
-      [allPaths addObject:[NSIndexPath indexPathForRow:row inColumn:col]];
-    }
+- (void) updateOpenPosition {
+  _openPosition = [MDSGameController sharedController].openLocation;
+  if ([MDSGameController sharedController].isComplete) {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"You Win!"
+                                                     message:nil
+                                                    delegate:nil
+                                           cancelButtonTitle:@"Sweet!"
+                                           otherButtonTitles:nil];
+    [alert show];
   }
-  
-  NSMutableArray * currentPositions = [NSMutableArray array];
-  for (MDSTile * tile in [MDSGameController sharedController].gameTiles) {
-    [currentPositions addObject:tile.currentIndex];
-  }
-  
-  [allPaths removeObjectsInArray:currentPositions];
-  _openPosition = [allPaths lastObject];
 }
 
 #pragma mark - Gesture Recognizer Callbacks
