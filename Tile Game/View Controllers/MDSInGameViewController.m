@@ -39,7 +39,7 @@
 
 #pragma mark - View Setup
 - (void) gameDidLoad {
-  _gameIsReady = YES;  
+  _gameIsReady = YES;
   
   if (self.gameView) {
     [self configureForGame];
