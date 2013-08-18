@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @class MDSTileSource;
+@class MDSTileView;
+
+typedef enum {
+  MDSShiftDirectionUp,
+  MDSShiftDirectionDown,
+  MDSShiftDirectionLeft,
+  MDSShiftDirectionRight,
+  MDSShiftDirectionNone
+} MDSShiftDirection; /// Used to indicate what direction tiles need to shift when there is a tap event
 
 @interface MDSGameView : UIView
 
@@ -17,5 +26,6 @@
 - (void) addTiles;
 
 - (CGPoint) centerForIndexPath:(NSIndexPath*)indexPath;
+- (NSArray*) tileViewsForShiftDirection:(MDSShiftDirection)direction relativeToTile:(MDSTileView*)tile;
 
 @end

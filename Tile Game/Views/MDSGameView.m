@@ -48,4 +48,47 @@
   return (CGPoint){CGRectGetMidX(tileFrame), CGRectGetMidY(tileFrame)};
 }
 
+- (NSArray*) tileViewsForShiftDirection:(MDSShiftDirection)direction
+                         relativeToTile:(MDSTileView *)tile {
+  NSMutableArray * tiles = [NSMutableArray array];
+  NSIndexPath * openPosition = [MDSGameController sharedController].openLocation;
+  
+  for (MDSTileView * tileView in self.tileViews) {
+    switch (direction) {
+      case MDSShiftDirectionRight:
+        if (tileView.tile.currentIndex.row == tile.tile.currentIndex.row &&
+            tileView.tile.currentIndex.column > tile.tile.currentIndex.column &&
+            tileView.tile.currentIndex.column < openPosition.column) {
+          [tiles addObject:tileView];
+        }
+        break;
+      case MDSShiftDirectionLeft:
+        if (tileView.tile.currentIndex.row == tile.tile.currentIndex.row &&
+            tileView.tile.currentIndex.column < tile.tile.currentIndex.column &&
+            tileView.tile.currentIndex.column > openPosition.column) {
+          [tiles addObject:tileView];
+        }
+        break;
+      case MDSShiftDirectionUp:
+        if (tileView.tile.currentIndex.row < tile.tile.currentIndex.row &&
+            tileView.tile.currentIndex.column == tile.tile.currentIndex.column &&
+            tileView.tile.currentIndex.row > openPosition.row) {
+          [tiles addObject:tileView];
+        }
+        break;
+      case MDSShiftDirectionDown:
+        if (tileView.tile.currentIndex.row > tile.tile.currentIndex.row &&
+            tileView.tile.currentIndex.column == tile.tile.currentIndex.column &&
+            tileView.tile.currentIndex.row < openPosition.row) {
+          [tiles addObject:tileView];
+        }
+        break;
+      case MDSShiftDirectionNone:
+        break;
+    }
+  }
+  
+  return tiles;
+}
+
 @end

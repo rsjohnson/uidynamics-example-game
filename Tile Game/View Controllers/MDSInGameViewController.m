@@ -7,10 +7,14 @@
 //
 
 #import "MDSInGameViewController.h"
+
+#import <QuartzCore/QuartzCore.h>
+
 #import "MDSGameController.h"
 #import "MDSGameView.h"
 #import "MDSTileView.h"
 #import "MDSTile.h"
+#import "MDSFireworksLayer.h"
 
 @interface MDSInGameViewController ()
 
@@ -21,7 +25,6 @@
 @implementation MDSInGameViewController
 {
   BOOL _gameIsReady;
-  UISnapBehavior *_snapBehavior;
   NSIndexPath * _openPosition;
 }
 
@@ -36,7 +39,7 @@
 
 #pragma mark - View Setup
 - (void) gameDidLoad {
-  _gameIsReady = YES;
+  _gameIsReady = YES;  
   
   if (self.gameView) {
     [self configureForGame];
@@ -71,10 +74,13 @@
 - (void) updateOpenPosition {
   _openPosition = [MDSGameController sharedController].openLocation;
   if ([MDSGameController sharedController].isComplete) {
+    MDSFireworksLayer * fireworks = (id)[MDSFireworksLayer layer];
+    [self.view.layer addSublayer:fireworks];
+    
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"You Win!"
                                                      message:nil
                                                     delegate:nil
-                                           cancelButtonTitle:@"Sweet!"
+                                           cancelButtonTitle:@"Sweet"
                                            otherButtonTitles:nil];
     [alert show];
   }
@@ -83,7 +89,61 @@
 #pragma mark - Gesture Recognizer Callbacks
 
 - (void) didTap:(UITapGestureRecognizer*) tapGR {
-  NSLog(@"%@", tapGR.view);
+  [self.animator removeAllBehaviors];
+  
+  MDSTileView * tileView = (MDSTileView*)tapGR.view;
+  NSIndexPath * currentIdx = tileView.tile.currentIndex;
+  
+  // see what direction we're headed
+  MDSShiftDirection shiftDirection = MDSShiftDirectionNone;
+  if (currentIdx.row == _openPosition.row) {
+    shiftDirection = currentIdx.column < _openPosition.column ? MDSShiftDirectionRight : MDSShiftDirectionLeft;
+  } else if (currentIdx.column == _openPosition.column) {
+    shiftDirection = currentIdx.row < _openPosition.row ?  MDSShiftDirectionDown : MDSShiftDirectionUp;
+  }
+  
+  if (shiftDirection == MDSShiftDirectionNone) {
+    return;
+  }
+  
+  NSArray * otherTilesToMove = [self.gameView tileViewsForShiftDirection:shiftDirection
+                                                          relativeToTile:tileView];
+  NSArray * tilesToMove = [@[tileView] arrayByAddingObjectsFromArray:otherTilesToMove];
+  
+  // Attach the subsequent tile views to the one that was tapped
+  for (MDSTileView * tileToMove in tilesToMove) {
+    NSIndexPath * currentLocation = tileToMove.tile.currentIndex;
+    // update the index path for the tile
+    switch (shiftDirection) {
+      case MDSShiftDirectionUp:
+        tileToMove.tile.currentIndex = [NSIndexPath indexPathForRow:currentLocation.row - 1
+                                                           inColumn:currentLocation.column];
+        break;
+      case MDSShiftDirectionDown:
+        tileToMove.tile.currentIndex = [NSIndexPath indexPathForRow:currentLocation.row + 1
+                                                           inColumn:currentLocation.column];
+        break;
+      case MDSShiftDirectionLeft:
+        tileToMove.tile.currentIndex = [NSIndexPath indexPathForRow:currentLocation.row
+                                                           inColumn:currentLocation.column - 1];
+        break;
+      case MDSShiftDirectionRight:
+        tileToMove.tile.currentIndex = [NSIndexPath indexPathForRow:currentLocation.row
+                                                           inColumn:currentLocation.column + 1];
+        break;
+      case MDSShiftDirectionNone:
+        break;
+    }
+    
+    // Move the tile view to the new position
+    UISnapBehavior * snapBehavior = [[UISnapBehavior alloc] initWithItem:tileToMove
+                                                             snapToPoint:[self.gameView centerForIndexPath:tileToMove.tile.currentIndex]];
+    snapBehavior.damping = 1.0;
+    [self.animator addBehavior:snapBehavior];
+    
+  }
+
+  [self updateOpenPosition];
 }
 
 - (void) didPan:(UIPanGestureRecognizer*)panGR {
@@ -92,7 +152,7 @@
   
   // if we don't remove any other snap behavior we don't get the sexy bouncing effect consistently
   // nor will we be able to move a view twice in a row
-  [self.animator removeBehavior:_snapBehavior];
+  [self.animator removeAllBehaviors];
   
   if (panGR.state == UIGestureRecognizerStateBegan) {
     lastTranslation = (CGPoint)[panGR translationInView:panGR.view.superview];
@@ -119,9 +179,9 @@
       snapPoint = openPositionCenter;
     }
 
-    _snapBehavior = [[UISnapBehavior alloc] initWithItem:tileView
+    UISnapBehavior * snapBehavior = [[UISnapBehavior alloc] initWithItem:tileView
                                              snapToPoint:snapPoint];
-    [self.animator addBehavior:_snapBehavior];
+    [self.animator addBehavior:snapBehavior];
     
   }
 }

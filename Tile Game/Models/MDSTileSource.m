@@ -37,10 +37,7 @@
   return self;
 }
 
-- (void) createTiles {
-  // incase you're wondering I'm using GCD here instead of NSOperationQueue as GCD will scale
-  // to the available resources / cores on the device.
-  
+- (void) createTiles {  
   dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
   dispatch_queue_t tileQueue = dispatch_queue_create("net.mds.tilesplicer", DISPATCH_QUEUE_CONCURRENT);
   
@@ -66,7 +63,7 @@
           _slicedImages[indexPath] = finalSlicedImage;
 #if TARGET_IPHONE_SIMULATOR
           NSData * pngData = UIImagePNGRepresentation(finalSlicedImage);
-          NSString * path = [NSString stringWithFormat:@"/tmp/%i_%i.png", row, column];
+          NSString * path = [NSString stringWithFormat:@"/tmp/%i_%i.png", row, col];
           [pngData writeToFile:path atomically:YES];
 #endif
         });

@@ -32,6 +32,8 @@
 		94338B1817BFE4070083BDDA /* MDSGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338B1717BFE4070083BDDA /* MDSGameView.m */; };
 		94338B1B17BFE6500083BDDA /* MDSTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338B1A17BFE6500083BDDA /* MDSTile.m */; };
 		94338B1E17BFFCE10083BDDA /* MDSTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94338B1D17BFFCE10083BDDA /* MDSTileView.m */; };
+		9490FA1A17C06242006B516E /* tspark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9490FA1917C06242006B516E /* tspark.png */; };
+		9490FA1D17C06297006B516E /* MDSFireworksLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9490FA1C17C06297006B516E /* MDSFireworksLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,9 @@
 		94338B1A17BFE6500083BDDA /* MDSTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDSTile.m; path = Models/MDSTile.m; sourceTree = "<group>"; };
 		94338B1C17BFFCE10083BDDA /* MDSTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSTileView.h; sourceTree = "<group>"; };
 		94338B1D17BFFCE10083BDDA /* MDSTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSTileView.m; sourceTree = "<group>"; };
+		9490FA1917C06242006B516E /* tspark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tspark.png; sourceTree = "<group>"; };
+		9490FA1B17C06297006B516E /* MDSFireworksLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDSFireworksLayer.h; path = Views/MDSFireworksLayer.h; sourceTree = "<group>"; };
+		9490FA1C17C06297006B516E /* MDSFireworksLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDSFireworksLayer.m; path = Views/MDSFireworksLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +169,7 @@
 		94338ACA17BE93850083BDDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9490FA1917C06242006B516E /* tspark.png */,
 				94338B0617BED4510083BDDA /* globe.jpg */,
 				94338ACB17BE93850083BDDA /* Tile Game-Info.plist */,
 				94338ACC17BE93850083BDDA /* InfoPlist.strings */,
@@ -238,6 +244,8 @@
 				94338B1717BFE4070083BDDA /* MDSGameView.m */,
 				94338B1C17BFFCE10083BDDA /* MDSTileView.h */,
 				94338B1D17BFFCE10083BDDA /* MDSTileView.m */,
+				9490FA1B17C06297006B516E /* MDSFireworksLayer.h */,
+				9490FA1C17C06297006B516E /* MDSFireworksLayer.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 			files = (
 				94338B0717BED4510083BDDA /* globe.jpg in Resources */,
 				94338ADA17BE93850083BDDA /* Main_iPad.storyboard in Resources */,
+				9490FA1A17C06242006B516E /* tspark.png in Resources */,
 				94338ADF17BE93850083BDDA /* Images.xcassets in Resources */,
 				94338AD717BE93850083BDDA /* Main_iPhone.storyboard in Resources */,
 				94338ACE17BE93850083BDDA /* InfoPlist.strings in Resources */,
@@ -352,6 +361,7 @@
 				94338B1117BFDCA20083BDDA /* MDSStartScreenViewController.m in Sources */,
 				94338B0E17BFD9460083BDDA /* MDSGameController.m in Sources */,
 				94338AD417BE93850083BDDA /* MDSAppDelegate.m in Sources */,
+				9490FA1D17C06297006B516E /* MDSFireworksLayer.m in Sources */,
 				94338B1817BFE4070083BDDA /* MDSGameView.m in Sources */,
 				94338B1E17BFFCE10083BDDA /* MDSTileView.m in Sources */,
 				94338ADD17BE93850083BDDA /* MDSViewController.m in Sources */,
@@ -493,6 +503,7 @@
 				GCC_PREFIX_HEADER = "Tile Game/Tile Game-Prefix.pch";
 				INFOPLIST_FILE = "Tile Game/Tile Game-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -507,6 +518,7 @@
 				GCC_PREFIX_HEADER = "Tile Game/Tile Game-Prefix.pch";
 				INFOPLIST_FILE = "Tile Game/Tile Game-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -570,6 +582,7 @@
 				94338AF717BE93850083BDDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94338AF817BE93850083BDDA /* Build configuration list for PBXNativeTarget "Tile GameTests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +591,7 @@
 				94338AFA17BE93850083BDDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
